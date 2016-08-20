@@ -78,8 +78,15 @@ multiply(4, 3, function(answer){
 
 
 function contains(array,str,cb) {
-cb(str !== array.indexOf('Colt'));
-}
+  for (var i = 0; i < array.length; i++) {
+  if (array[i] === str) {
+    cb(true);
+  } else {
+     cb(false);
+   }
+ }
+ }
+
 contains(names, 'Colt', function(result){
   if(result === true){
     console.log('Colt is in the array');
